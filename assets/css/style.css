@@ -22,6 +22,9 @@ body {
 }
 
 header {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
   background: var(--secondary);
   padding: 30px 25px;
   border-bottom: 5px solid var(--primary);
@@ -31,6 +34,17 @@ header p {
   color: var(--tertiary);
   margin: 5px 0 20px;
   font-size: 2rem;
+}
+
+/* High Score */
+.high-score a{
+  font-size: large;
+  text-decoration: none;
+}
+
+/* Timer */
+#timer {
+  font-size: large;
 }
 
 p,
@@ -65,7 +79,6 @@ footer {
   color: var(--tertiary);
   font-size: 2.4rem;
   padding: 20px;
-  border-top: 5px solid var(--primary);
 }
 
 .page-title {
@@ -75,7 +88,7 @@ footer {
   font-size: 4.5rem;
 }
 
-.page-content {
+.quiz-box {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
@@ -84,23 +97,46 @@ footer {
   width: 95%;
 }
 
-.task-list-wrapper {
+.quiz-wrapper {
   flex: 1;
-  margin: 0 20px 20px;
+  margin: 0 200px 100px;
 }
 
-.list-title {
+.quiz-title {
   color: var(--secondary);
   font-size: 2.6rem;
+  text-align: center;
 }
 
-.task-list {
+.quiz-list {
   list-style: none;
   padding: 15px;
   height: calc(100% - 50px);
   background: rgb(196, 196, 196);
   border-radius: 12px;
   border: 2px solid var(--grey);
+}
+
+#start {
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: 10px 15px;
+  background: var(--primary);
+  font-size: 2.2rem;
+  border-radius: 12px;
+  position: relative;
+  top: -3px;
+  box-shadow: 0 3px var(--grey);
+}
+
+#start:hover {
+  box-shadow: 0 2px var(--grey);
+  top: -2px;
+}
+#start:active {
+  box-shadow: 0 0px var(--grey);
+  top: 0;
 }
 
 .task-item {
@@ -225,7 +261,7 @@ footer {
     width: 100%;
   }
 
-  .task-list-wrapper {
+  .quiz-wrapper {
     flex-basis: 100%;
   }
 

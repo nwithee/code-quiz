@@ -1,10 +1,104 @@
+// New Code
+
+//Variables
+var score = 0;
+var questionIndex = 0;
+
+var currentTime = document.querySelector("#timer");
+var startTimer = document.querySelector("#start");
+var quizQuestions = document.querySelector("quiz-wrapper");
+var quizBox = document.querySelector("quiz-box");
+
+//array for question and correct answers
+
+var questions = [
+  {
+    name: "What does HTML stand for?",
+    choices: ["Hyper Text Markup Language", "Hyperlink Things and Major Language", "House Tops Mango Lady", "Harken To My Llama"] ,
+    answer: "Hyper Text Markup Language"
+
+  },
+  {
+    name: "What is the correct sequence of HTML tags for starting a webpage?",
+    choices: ["Head, Title, HTML", "Title, Head, HTML", "HTML, Head, Title", "HTML, HTML, HTML"],
+    answer: "HTML, Head, Title"
+
+  },
+  {
+    name: "Choose the correct HTML tag for the largest heading: ",
+    choices: ["h1", "Heading", "h2", "p"],
+    answer: "h1"
+
+  },
+  {
+    name: "To display a simple message to a user via javascript you can use the following bit of code: " ,
+    choices: ["window.door", "alert.user", "window.alert", "window.window"] ,
+    answer: "window.alert"
+
+  },
+  {
+    name: "To publish content during development to the console, what bit of code can you add to your javascript file?" ,
+    choices: ["log.mystuff", "console.publish", "console.log", "display.bugs"] ,
+    answer: "console.log"
+
+  },
+]
+
+//Sets starting time amount
+var timeLeft = 60;
+
+//Sets penalty time for missed question
+var penaltyTime = 10;
+
+//Create new question elements
+var ulQuestionCreate = document.createElement("ul");
+
+//Timer Code
+startTimer.addEventListener("click", function(){
+  currentTime.textContent ="Time: " + timeLeft;
+
+  publish(questionIndex);
+});
+
+
+//Code to publish questions to the page
+var publish = function(questionIndex){
+  //Remove content before publication
+  quizQuestions.innerHTML ="";
+  ulQuestionCreate.innerHTML = "";
+
+  //Code to loop through questions
+  for (var i=0; i < questions.length; i++) {
+    var quizQuestion = questions[questionIndex].name;
+    var questionChoices = questions[questionIndex].choices;
+    quizQuestions.textContent = quizQuestion;
+  }
+  questionChoices.forEach(function (newThing){
+    var listThing =document.createElement("li");
+    listThing.textContent = newThing;
+    quizQuestion.appendChild(ulQuestionCreate);
+    ulQuestionCreate.appendChild(listThing);
+    listThing.addEventListener("click", (check));
+  })
+
+}
+
+var check
+
+
+
+
+
+
+
+//  Old Code
 var taskIdCounter = 0;
 
 var formEl = document.querySelector("#task-form");
-var tasksToDoEl = document.querySelector("#tasks-to-do");
+var tasksToDoEl = document.querySelector("#quiz-list");
 var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 var tasksCompletedEl = document.querySelector("#tasks-completed");
-var pageContentEl = document.querySelector("#page-content");
+var pageContentEl = document.querySelector("#quiz-box");
 
 // create array to hold tasks for saving
 var tasks = [];

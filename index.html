@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Taskinator</title>
+  <title>Code Quiz</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
+  <!--  Comment Out
   <header>
     <h1 class="page-title">Taskinator</h1>
     <p>Click the button below to add a new task!</p>
@@ -32,28 +33,29 @@
     </form>
   </header>
 
-  <main class="page-content" id="page-content">
-    <!-- Tasks To Do -->
-    <section class="task-list-wrapper">
-      <h2 class="list-title">Tasks To Do</h2>
-      <ul class="task-list" id="tasks-to-do"></ul>
-    </section>
+  !-->
+  <header>
+    <!-- High Score Link-->
+    <div class ="high-score">
+      <a href="highscores.html">View High Scores</a>
+    </div>
+    <!-- Timer Display-->
+    <div id ="timer"></div>
+  </header>
 
-    <!-- Tasks In Progress -->
-    <section class="task-list-wrapper">
-      <h2 class="list-title">Tasks In Progress</h2>
-      <ul class="task-list" id="tasks-in-progress"></ul>
-    </section>
-
-    <!-- Tasks Completed -->
-    <section class="task-list-wrapper">
-      <h2 class="list-title">Tasks Completed</h2>
-      <ul class="task-list" id="tasks-completed"></ul>
+  <main class="quiz-box" id="quiz-box">
+    <section class="quiz-wrapper">
+      <h2 class="quiz-title">Quiz Challenge!</h2>
+      <p>Try to answer the following questions before time runs out!  Each incorrect answer will deduct
+        5 seconds from the timer, so be careful!
+      </p>
+      <ul class="quiz-list" id="quiz-list"></ul>
+      <button id="start">Start the Quiz!</button>
     </section>
   </main>
 
   <footer>
-    &copy;2020 by Taskinator
+    <p>Coding Quiz</p>
   </footer>
 
   <script src="./assets/js/script.js"></script>
