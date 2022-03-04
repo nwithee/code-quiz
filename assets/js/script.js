@@ -83,7 +83,38 @@ var publish = function(questionIndex){
 
 }
 
-var check
+//Code for checking whether an answer is correct
+var check = function(event){
+  var item = event.target;
+
+  if (item.matches("li")) {
+    var createNewDiv = document.createElement("div");
+    createNewDiv.setAttribute("id", "createDiv");
+    //Correct Answer
+    if (Element.textContent == questions[questionIndex].answer) {
+      createNewDiv.textContent = "That is Correct!";
+      score++;
+    }
+    //Incorrect Answer
+    else {
+      createNewDiv.textContent = "Incorrect.  The right answer was: "+ questions[questionIndex].answer;
+      timeLeft = timeLeft - penaltyTime;
+    }
+  }
+
+  //Code to determine which question the user sees
+  questionIndex++;
+
+  if (questionIndex >= questions.length ) {
+    quizComplete();
+    createNewDiv.textContent = "The quiz is done!  Your final score is " + score; 
+  }
+  else {
+    publish(questionIndex);
+  }
+
+  quizQuestions.appendChild(createNewDiv);
+}
 
 
 
