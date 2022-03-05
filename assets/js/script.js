@@ -156,7 +156,7 @@ var  quizComplete = function() {
   //Input Text
   var createInitials = document.createElement("label")
   createInitials.setAttribute("id", createInitials);
-  createInitials.textContent = "Enter your iniitals";
+  createInitials.textContent = "Enter your initials";
 
   quizQuestions.appendChild(createInitials);
 
