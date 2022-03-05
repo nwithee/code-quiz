@@ -3,7 +3,7 @@
 }
 
 :root {
-  --primary: #44e9ff;
+  --primary: gold;
   --secondary: #497980;
   --tertiary: rgb(192, 246, 253);
   --grey: #333;
@@ -23,7 +23,7 @@ body {
 
 header {
   display: flex;
-  align-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   background: var(--secondary);
   padding: 30px 25px;
@@ -40,11 +40,13 @@ header p {
 .high-score a{
   font-size: large;
   text-decoration: none;
+  color: white;
 }
 
 /* Timer */
 #timer {
   font-size: large;
+  color: white;
 }
 
 p,
