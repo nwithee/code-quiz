@@ -1,5 +1,3 @@
-// New Code
-
 //Variables
 var score = 0;
 var questionIndex = 0;
@@ -43,6 +41,7 @@ var questions = [
   },
 ]
 
+//More variables
 //Sets starting time amount
 var timeLeft = 61;
 //Sets penalty time for missed question
@@ -54,7 +53,7 @@ var ulQuestionCreate = document.createElement("ul");
 ulQuestionCreate.className = "quiz-list";
 
 
-//Timer Code
+//Timer code
 startTimer.addEventListener("click", function(){
   if (interval === 0) {
     interval = setInterval (function(){
@@ -69,7 +68,6 @@ startTimer.addEventListener("click", function(){
   }, 1000);
 }
   publish(questionIndex);
-
 });
 
 //Code to publish questions to the page
@@ -83,6 +81,7 @@ var publish = function(questionIndex){
     var quizQuestion = questions[questionIndex].name;
     var questionChoices = questions[questionIndex].choices;
     quizQuestions.textContent = quizQuestion;
+    quizQuestions.className = "quiz-wrapper";
   }
   questionChoices.forEach(function (newThing){
     var listThing =document.createElement("li");
