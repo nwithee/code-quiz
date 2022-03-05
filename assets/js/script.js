@@ -6,11 +6,10 @@ var questionIndex = 0;
 
 var currentTime = document.querySelector("#timer");
 var startTimer = document.querySelector("#start");
-var quizQuestions = document.querySelector("quiz-wrapper");
-var quizBox = document.querySelector("quiz-box");
+var quizQuestions = document.querySelector("#quiz-wrapper");
+var quizBox = document.querySelector("#quiz-box");
 
-//array for question and correct answers
-
+//array for question with correct answers
 var questions = [
   {
     name: "What does HTML stand for?",
@@ -45,21 +44,22 @@ var questions = [
 ]
 
 //Sets starting time amount
-var timeLeft = 60;
-
+var timeLeft = 61;
 //Sets penalty time for missed question
 var penaltyTime = 10;
-
 //Create new question elements
 var ulQuestionCreate = document.createElement("ul");
+ulQuestionCreate.className = "quiz-list";
+
 
 //Timer Code
 startTimer.addEventListener("click", function(){
-  currentTime.textContent ="Time: " + timeLeft;
-
+  if (timeLeft >=0){
+    timeLeft --;
+    currentTime.textContent ="Time: " + timeLeft;
+  };
   publish(questionIndex);
 });
-
 
 //Code to publish questions to the page
 var publish = function(questionIndex){
@@ -76,7 +76,7 @@ var publish = function(questionIndex){
   questionChoices.forEach(function (newThing){
     var listThing =document.createElement("li");
     listThing.textContent = newThing;
-    quizQuestion.appendChild(ulQuestionCreate);
+    quizQuestions.appendChild(ulQuestionCreate);
     ulQuestionCreate.appendChild(listThing);
     listThing.addEventListener("click", (check));
   })
@@ -89,9 +89,10 @@ var check = function(event){
 
   if (item.matches("li")) {
     var createNewDiv = document.createElement("div");
-    createNewDiv.setAttribute("id", "createDiv");
+    createNewDiv.setAttribute("id", "createNewDiv");
+    
     //Correct Answer
-    if (Element.textContent == questions[questionIndex].answer) {
+    if (item.textContent == questions[questionIndex].answer) {
       createNewDiv.textContent = "That is Correct!";
       score++;
     }
@@ -396,7 +397,7 @@ var loadTasks = function() {
 };
 
 // Create a new task
-formEl.addEventListener("submit", taskFormHandler);
+//formEl.addEventListener("submit", taskFormHandler);
 
 // for edit and delete buttons
 pageContentEl.addEventListener("click", taskButtonHandler);
