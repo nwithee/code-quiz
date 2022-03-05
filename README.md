@@ -12,7 +12,7 @@ A website that generates a quiz for aspiring coders
 https://nwithee.github.io/code-quiz/
 
 ## Screenshot
-tbd
+https://github.com/nwithee/code-quiz/blob/main/assets/images/Screen%20Shot.png?raw=true
 
 ## Contribution
 Made by [Nevin Withee]
