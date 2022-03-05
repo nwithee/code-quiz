@@ -117,7 +117,39 @@ var check = function(event){
   quizQuestions.appendChild(createNewDiv);
 }
 
+var  quizComplete = function() {
+  quizQuestions.innerHTML = "";
+  currentTime.innerHTML = "";
 
+  //Completed quiz heading
+  var createHeading = document.createElement("h1");
+  createHeading.setAttribute("id", createHeading);
+  createHeading.textContent ="Your quiz is complete!";
+
+  quizQuestions.appendChild(createHeading);
+
+  //Completed quiz content
+  var createContent =document.createElement("p");
+  createContent.setAttribute ("id", createContent);
+
+  quizQuestions.appendChild(createContent);
+
+  var createInitials = document.createElement("label")
+  createInitials.setAttribute("id", createInitials);
+  createInitials.textContent = "Enter your iniitals";
+
+  quizQuestions.appendChild(createInitials);
+
+  var createInitInput = document.createElement("input");
+  createInitInput.setAttribute("type", "text");
+  createInitInput.setAttribute("id", "initials");
+  createInitInput.textContent="Your Initials";
+
+  quizQuestions.appendChild(createInitInput);
+
+
+
+}
 
 
 
